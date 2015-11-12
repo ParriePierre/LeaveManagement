@@ -41,4 +41,17 @@ public class Employes {
 		System.err.println("Unknown Login");
 		return false;
 	}
+	
+	/**
+	 * Go through Employes list to get an employee
+	 * @param Login The login of the employee to look for
+	 * @return The employee object or null
+	 */
+	public Employee getEmployee(String Login) {
+		for (Employee e : employes) {
+			if(e.getLogin().equals(Login))
+				return e;
+		}
+		return null;
+	}
 }

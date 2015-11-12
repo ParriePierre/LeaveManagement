@@ -13,7 +13,7 @@ public class Employee {
 	private String Login;
 	private String Password;
 	
-	public Employee(String firstName, String lastName, String login,
+	protected Employee(String firstName, String lastName, String login,
 			String password) {
 		super();
 		FirstName = firstName;
