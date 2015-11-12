@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Connection error</title>
 </head>
 <body>
-
+<h1>Connection error</h1>
+<p> Error type :
+<%
+	out.println(request.getParameter("ErrorType"));
+%>
+</p>
 </body>
 </html>

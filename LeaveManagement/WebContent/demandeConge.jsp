@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Leave Management - Request</title>
 </head>
 <body>
+<h1>Leave Management - Response</h1>
 
 </body>
 </html>

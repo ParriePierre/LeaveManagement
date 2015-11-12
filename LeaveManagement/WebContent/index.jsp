@@ -4,9 +4,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Leave Management</title>
 </head>
 <body>
-
+<h1>Leave Management</h1>
+<form action="localhost:8888/LeaveManagement/Authentification" method="post">
+	<table>
+		<tr>
+			<td>Login</td>
+			<td><input type="text" name="login"></td>
+		</tr>
+		<tr>
+			<td>Password</td>
+			<td><input type="password" name="password"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" value="Login">
+	</table>
+</form>
 </body>
 </html>
