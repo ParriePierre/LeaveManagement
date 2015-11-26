@@ -1,4 +1,4 @@
-package data;
+package model;
 
 import java.util.ArrayList;
 
@@ -13,6 +13,8 @@ public class Employes {
 
 	public Employes() {
 		employes = new ArrayList<Employee>();
+		
+		addEmployee("P", "L", "test", "test");
 	}
 	
 	/**
@@ -33,12 +35,14 @@ public class Employes {
 	 * @param Password Password of the employee
 	 * @return Returns true if the password is correct, false is the password is wrong or the login doesn't exists 
 	 */
-	public Boolean checkPassword(String Login,String Password) {
-		for (Employee e : employes) {
-			if(e.getLogin().equals(Login))
-				return e.checkPassword(Password);
+	public Boolean checkCredentials(String Login,String Password) {
+		
+		Employee e = getEmployee(Login);
+		
+		if(e != null){
+			if(e.checkPassword(Password))
+				return true;
 		}
-		System.err.println("Unknown Login");
 		return false;
 	}
 	
@@ -48,9 +52,11 @@ public class Employes {
 	 * @return The employee object or null
 	 */
 	public Employee getEmployee(String Login) {
-		for (Employee e : employes) {
-			if(e.getLogin().equals(Login))
-				return e;
+		if(!employes.isEmpty()){
+			for (Employee e : employes) {
+				if(e.getLogin().equals(Login))
+					return e;
+			}
 		}
 		return null;
 	}
