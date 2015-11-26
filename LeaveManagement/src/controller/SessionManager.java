@@ -16,6 +16,12 @@ public class SessionManager {
 	HttpSession session;
 	Cookie[] cookies;
 	
+	/**
+	 * Create session
+	 * @param request
+	 * @param response
+	 * @param e : Employee
+	 */
 	public void createSession(HttpServletRequest request,HttpServletResponse response, Employee e){
 		session = request.getSession();
 		cookies = new Cookie[3];
@@ -33,6 +39,12 @@ public class SessionManager {
 		}
 	}
 	
+	/**
+	 * Check if user is connected
+	 * @param request
+	 * @param response
+	 * @return true if connected
+	 */
 	public boolean checkSession(HttpServletRequest request, HttpServletResponse response){
 		
 		Employee e = null;
@@ -69,6 +81,14 @@ public class SessionManager {
 		return false;
 	}
 	
+	/**
+	 * Check if user is connected and redirect to error page if not
+	 * @param request
+	 * @param response
+	 * @return true if connected
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	public boolean checkSessionWithRedirection(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
 		if(checkSession(request,response))
@@ -83,6 +103,11 @@ public class SessionManager {
 		return false;
 	}
 	
+	/**
+	 * Destroy session and cookies
+	 * @param request
+	 * @param response
+	 */
 	public void killSession(HttpServletRequest request, HttpServletResponse response){
 		request.getSession().invalidate();
 		
